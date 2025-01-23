@@ -62,7 +62,7 @@ cd <repository_directory>
 1. Navigate to the backend directory:
 
 ```bash
-cd server
+cd backend
 ```
 
 2. Install dependencies:
@@ -91,7 +91,7 @@ npm start
 1. Navigate to the frontend directory:
 
 ```bash
-cd client
+cd frontend
 ```
 
 2. Install dependencies:
