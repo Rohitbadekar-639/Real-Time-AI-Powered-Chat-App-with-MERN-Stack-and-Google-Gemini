@@ -1,5 +1,8 @@
 # Real-Time AI-Powered Chat App with MERN Stack and Google Gemini
 
+## Live Demo -
+https://real-time-ai-powered-chat-app-with-mern-stack-and-google-gemini.vercel.app/login
+
 ## Project Overview
 
 This project demonstrates how to build a **Real-Time Chat Application** using the **MERN stack** (MongoDB, Express.js, React.js, and Node.js), integrated with **AI capabilities from Google Gemini** for enhanced functionality. It leverages **Redis** for improved performance and utilizes **Socket.IO** for real-time communication. The application is designed to be beginner-friendly while covering advanced features for skill enhancement.
