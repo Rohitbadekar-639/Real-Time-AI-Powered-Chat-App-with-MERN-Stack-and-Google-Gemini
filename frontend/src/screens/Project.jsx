@@ -9,6 +9,7 @@ import {
 } from "../config/socket";
 import Markdown from "markdown-to-jsx";
 import hljs from "highlight.js";
+import "highlight.js/styles/nord.css";
 import { getWebContainer } from "../config/webContainer";
 
 function SyntaxHighlightedCode(props) {

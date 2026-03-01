@@ -20,7 +20,12 @@ const Home = () => {
       })
       .then((response) => {
         console.log(response.data);
+        const newProject = response.data;
+        setProject((prevProjects) => [...prevProjects, newProject]);
         setIsModalOpen(false);
+        setProjectName("");
+        // Navigate to the new project
+        navigate(`/project`, { state: { project: newProject } });
       })
       .catch((error) => {
         console.error(error);
