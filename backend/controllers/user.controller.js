@@ -41,7 +41,7 @@ export const loginController = async (req, res) => {
     delete user._doc.password;
     res.status(200).json({ user, token });
   } catch (err) {
-    res.send(400).send(err.message);
+    res.status(400).send(err.message);
   }
 };
 

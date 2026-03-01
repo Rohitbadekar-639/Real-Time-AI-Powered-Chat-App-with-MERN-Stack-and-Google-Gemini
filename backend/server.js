@@ -11,7 +11,15 @@ const port = process.env.PORT || 3000;
 
 const server = http.createServer(app);
 const io = new Server(server, {
-  cors: { origin: "*" },
+  cors: {
+    origin: [
+      'https://real-time-ai-powered-chat-app-with-mern-stack-and-google-gemini.vercel.app',
+      'http://localhost:3000',
+      'http://localhost:5173'
+    ],
+    credentials: true,
+    methods: ['GET', 'POST']
+  }
 });
 
 io.use(async (socket, next) => {
