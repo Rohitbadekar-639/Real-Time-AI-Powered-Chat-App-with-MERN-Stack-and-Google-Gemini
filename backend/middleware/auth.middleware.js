@@ -18,19 +18,23 @@ export const authUser = async (req, res, next) => {
       return res.status(401).send({ error: "Unauthorized User" });
     }
 
-    // Check Redis if the token is invalid
-    const isLoggedOut = await redisClient.get(token);
-    if (isLoggedOut) {
-      return res.status(401).send({ error: "Token is invalidated" });
+    // Check Redis if token is invalid (skip if Redis is not connected)
+    try {
+      const isLoggedOut = await redisClient.get(token);
+      if (isLoggedOut) {
+        return res.status(401).send({ error: "Token is invalidated" });
+      }
+    } catch (redisError) {
+      console.log("Redis not available, skipping token blacklist check");
     }
 
-    // Verify the token and decode it
+    // Verify and decode token
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
     req.user = decoded;
 
     next(); // Move to the next middleware or route handler
   } catch (error) {
-    console.error("Token Verification Error:", error);
+    console.error("Token Verification Error:", error.message);
     res.status(401).send({ error: "Unauthorized User" });
   }
 };
