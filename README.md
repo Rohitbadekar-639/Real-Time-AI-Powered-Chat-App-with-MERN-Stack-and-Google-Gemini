@@ -1,7 +1,6 @@
-# Real-Time AI-Powered Chat App with MERN Stack and Google Gemini
+# Real-Time AI Chat App (MERN, Socket.IO and Gemini)
 
-## Live Demo -
-https://real-time-ai-powered-chat-app-with-mern-stack-and-google-gemini.vercel.app/login
+## Live Demo - https://realaichatbotapp.vercel.app/
 
 ## Project Overview
 
